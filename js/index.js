@@ -13,10 +13,10 @@ const wind = document.getElementById("wind");
 var txtSearch = document.getElementById("txt-city").value;
 //BUTTONS
 var btnSearch = document.getElementById("btn-city");
-btnSearch.addEventListener("click", tite);
+btnSearch.addEventListener("click", weather);
 
 //API SHITS
-function tite(e){
+function weather(e){
         const api = `https://weatherapi-com.p.rapidapi.com/current.json?q=${txtSearch}`;
         fetch(api, {
           method: "GET",
@@ -37,7 +37,7 @@ function tite(e){
             countryText.innerHTML = data.location.country;
             precipitation.innerHTML = `Precipitation: ${data.current.precip_in}%`;
             humidity.innerHTML = `Humidity: ${data.current.humidity}%`;
-            wind.innerHTML = `Wind: ${data.current.gust_kph} km/h`;
+            wind.innerHTML = `Wind: ${data.current.wind_kph} km/h`;
             weatherCelcius.innerHTML = `${data.current.temp_c}°C`;
             const container = document.querySelector("container");
         
