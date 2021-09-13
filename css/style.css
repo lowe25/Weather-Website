@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.weather-container {
+  display: grid;
+  justify-content: center;
+  padding: 15px;
+}
+/*City Seach Form*/
+.src-form {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+#txt-city {
+  height: 30px;
+  width: 165px;
+}
+#btn-city {
+    height: 33px;
+    width: 165px;
+    cursor: pointer;
+    background-color:   #b00f0f ;
+    color: #f4f4f4;
+    border: none;
+}
+  
+/*Weather Details*/
+.weather-box {
+  height: 280px;
+  border: 1px solid black;
+  padding: 20px;
+}
+.weather-details {
+  list-style: none;
+}
+.weather-details li {
+  padding: 5px 10px;
+}
+#weather-celcius,
+#weather-fahren {
+  padding: 5px;
+}
+
+/*Table*/
+.country-tbl {
+  width: 400px;
+  text-align: center;
+}
+.country-tbl,
+th,
+td {
+}
+.country-tbl th{
+    background-color:  #21283c;
+    color: #f4f4f4;
+}
+
+.country-tbl td{
+    border: 1px solid black;
+}
+
+/*Buttons*/
+.btn-grp {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-celcius,
+.btn-fahren {
+  height: 32px;
+  width: 100px;
+  cursor: pointer;
+  border: none;
+  color: #f4f4f4;
+}
+
+.btn-celcius{
+    background-color:  #b81d1d ;
+}
+
+.btn-fahren{
+    background-color:  #1a448e;
+}

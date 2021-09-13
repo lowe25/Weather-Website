@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Weather App</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="weather-container">
+            <div class="src-form">
+                <input type="text" id="txt-city" placeholder="Enter City">
+                <button id="btn-city">Search</button>
+            </div>
+            <div class="weather-box">
+                <h1 style="text-align: center;">Today's Weather</h1>
+                <div class="weather-details">
+                    <h1 id="weather-celcius"></h1>
+                    <h1 id="weather-fahren"></h1>
+                    <ul class="weather-details">
+                        <li id="preci"></li>
+                        <li id="humidity"></li>
+                        <li id="wind"></li>
+                    </ul>
+                </div>
+                <table class="country-tbl">
+                    <tr>
+                        <th>Country</th>
+                        <th>City</th>
+                    </tr>
+                    <tr>
+                        <td id="cityText"></td>
+                        <td id="countryText"></td>
+                    </tr>
+                </table>
+                <div class="btn-grp">
+                    <button class="btn-celcius" id="celcius">°C</button>
+                    <button class="btn-fahren" id="fahren">°F</button>
+                </div>
+            </div>
+            <!--Weather Box-->
+        </div>
+        <!--Weather Contaier-->
+    </div>
+    <!--Container-->
+    <script src="js/index.js"></script>
+</body>
+
+</html>
