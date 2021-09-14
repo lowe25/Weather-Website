@@ -13,16 +13,18 @@ const wind = document.getElementById("wind");
 var txtSearch = document.getElementById("txt-city").value;
 //BUTTONS
 var btnSearch = document.getElementById("btn-city");
-btnSearch.addEventListener("click", weather);
-
+//btnSearch.addEventListener("click", weather);
+btnSearch.onclick = weather;
 //API SHITS
+var key = apiKey.API_KEY;
 function weather(e){
         const api = `https://weatherapi-com.p.rapidapi.com/current.json?q=${txtSearch}`;
         fetch(api, {
           method: "GET",
           headers: {
             "x-rapidapi-host": "weatherapi-com.p.rapidapi.com",
-            "x-rapidapi-key": "568cd133bbmshb727f89d2da78d6p192e4djsnc6938c201e7d",
+            "x-rapidapi-key": key
+            //"x-rapidapi-key": "568cd133bbmshb727f89d2da78d6p192e4djsnc6938c201e7d",
           },
         })
           .then((response) => {
@@ -56,6 +58,8 @@ function weather(e){
               weatherFahren.style.display = "block";
               weatherCelcius.style.display = "none";
             }
+            e.preventDefault();
+            window.location.reload();
         })
           .catch((err) => {
             console.error(err);
