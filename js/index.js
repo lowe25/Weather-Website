@@ -21,11 +21,12 @@ var key = apiKey.API_KEY;
 
 function weather(e) {
   const api = `https://weatherapi-com.p.rapidapi.com/current.json?q=${txtSearch}`;
-  fetch(api, {
+  //fetch(api,
+  fetch(".netlify/functions/api", {
     method: "GET",
     headers: {
-      "x-rapidapi-host": "weatherapi-com.p.rapidapi.com",
-      "x-rapidapi-key": key,
+      "x-rapidapi-host": "weatherapi-com.p.rapidapi.com"
+      //"x-rapidapi-key": key,
     },
   })
     .then((response) => {
