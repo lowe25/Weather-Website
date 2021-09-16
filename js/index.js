@@ -35,7 +35,6 @@ function weather(e) {
     })
     .then((data) => {
       codes(data);
-      e.preventDefault();
     })
     .catch((err) => {
       console.error(err);
