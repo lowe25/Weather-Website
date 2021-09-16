@@ -17,7 +17,7 @@ var btnSearch = document.getElementById("btn-city");
 btnSearch.addEventListener("click", weather);
 
 //API SHITS
-var key = apiKey.API_KEY;
+//var key = apiKey.API_KEY;
 
 function weather(e) {
   const api = `https://weatherapi-com.p.rapidapi.com/current.json?q=${txtSearch}`;
