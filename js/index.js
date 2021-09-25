@@ -11,22 +11,45 @@ const wind = document.getElementById("wind");
 
 //TEXTBOXES
 var txtSearch = document.getElementById("txt-city").value;
-
+console.log(txtSearch);
 //BUTTONS
 var btnSearch = document.getElementById("btn-city");
 btnSearch.addEventListener("click", weather);
+btnSearch.addEventListener("click", refreshPage);
 
 //API SHITS
 //var key = apiKey.API_KEY;
+const key = "568cd133bbmshb727f89d2da78d6p192e4djsnc6938c201e7d";
+const api = `https://weatherapi-com.p.rapidapi.com/current.json?q=${txtSearch}`;
 
-function weather(e) {
-  const api = `https://weatherapi-com.p.rapidapi.com/current.json?q=${txtSearch}`;
-  //fetch(api,
-  fetch(".netlify/functions/api", {
+async function weather(){
+  try{
+   const response = await fetch(api,{
     method: "GET",
     headers: {
-      "x-rapidapi-host": "weatherapi-com.p.rapidapi.com"
-      //"x-rapidapi-key": key,
+      "x-rapidapi-host": "weatherapi-com.p.rapidapi.com",
+      "x-rapidapi-key": key,
+    }
+   });
+    if(response.ok){
+      const jsonRes = await response.json();
+      codes(jsonRes);
+      console.log(response)
+      return response;
+    }
+  }catch(error){
+    console.log(error);
+  }
+}
+/*
+function weather() {
+  const api = `https://weatherapi-com.p.rapidapi.com/current.json?q=${txtSearch}`;
+  //fetch(api,
+  fetch(api, {
+    method: "GET",
+    headers: {
+      "x-rapidapi-host": "weatherapi-com.p.rapidapi.com",
+      "x-rapidapi-key": key,
     },
   })
     .then((response) => {
@@ -34,14 +57,14 @@ function weather(e) {
         return response.json();
       }
     })
-    .then((data) => {
-      codes(data);
+    .then((response) => {
+      codes(response);
     })
     .catch((err) => {
       console.error(err);
     });
 }
-
+*/
 function codes(data) {
   cityText.innerHTML = data.location.name;
   countryText.innerHTML = data.location.country;
@@ -67,3 +90,8 @@ function codes(data) {
   }
 }
 
+function refreshPage(){
+  window.location.reload();
+}
+
+weather();
